@@ -1,1 +1,4 @@
-@import-normalize;
+@import "stylesheets/reset";
+@import "variables/fonts/fonts";
+
+@import "components/MainMenu";
