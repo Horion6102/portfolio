@@ -1,24 +1,28 @@
 .layout {
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 5rem;
+  height: 4rem;
 }
 
 .mainMenu {
   font-family: "Kanit", sans-serif;
   display: flex;
-  line-height: 3rem;
-  border-radius: 30px;
-  overflow: hidden;
-  max-width: fit-content;
-  box-shadow: 0px 5px 7px 0px rgb(201, 201, 201);
+  justify-content: flex-end;
+  align-items: center;
+  line-height: 4rem;
+  width: 100%;
+  // box-shadow: 0px 5px 7px 0px rgb(201, 201, 201);
+  padding: 0 8rem;
+  background-color: $third;
 
-  animation: backgroundMainMenu 2.5s cubic-bezier(0.47, 0.29, 0.07, 1);
+  animation: backgroundMainMenu 375ms linear forwards;
+  animation-delay: 0.75s;
+
+  opacity: 0;
 
   &__item {
     position: relative;
-    color: rgb(32, 32, 32);
+    color: $black;
     text-decoration: none;
     font-size: 1.25rem;
 
@@ -26,7 +30,10 @@
     padding-right: 1rem;
     transition: all 250ms ease-in-out;
 
-    animation: backgroundMainMenuItems 2s ease-in-out;
+    animation: backgroundMainMenuItems 2s ease-in-out forwards;
+    animation-delay: 0.7s;
+
+    opacity: 0;
 
     &::before {
       content: "";
@@ -35,7 +42,6 @@
       position: absolute;
       height: 0px;
       width: 100%;
-      border-radius: 30px 30px 0 0;
       transition: all 150ms ease-in-out;
     }
 
@@ -43,39 +49,61 @@
       content: "";
       bottom: 0;
       position: absolute;
-      height: 5px;
+      height: 4px;
       width: 100%;
-      background: rgb(177, 15, 226);
+      background: $primary;
     }
+  }
+}
+
+.decoration-red {
+  position: absolute;
+  background-color: $primary;
+  width: 100%;
+  animation: backgroundMainMenuDecoration 750ms linear;
+  // animation-delay: 1s;
+}
+
+.decoration-blue {
+  position: absolute;
+  background-color: $secondary;
+  width: 100%;
+  animation: backgroundMainMenuDecoration 750ms linear;
+  animation-delay: 0.375s;
+}
+
+@keyframes backgroundMainMenuDecoration {
+  0% {
+    height: 0rem;
+  }
+  50% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+    bottom: 0;
   }
 }
 
 @keyframes backgroundMainMenu {
   0% {
-    opacity: 0;
-    width: 30px;
-    max-height: 3rem;
-  }
-  30% {
-    opacity: 100%;
+    opacity: 1;
+    height: 0rem;
   }
   100% {
-    width: 100%;
+    opacity: 1;
     height: 100%;
   }
 }
 
 @keyframes backgroundMainMenuItems {
   0% {
-    display: none;
     opacity: 0;
   }
   30% {
     opacity: 1%;
-    display: flex;
   }
   100% {
     opacity: 100%;
-    display: flex;
   }
 }
