@@ -15,7 +15,7 @@
   padding: 0 8rem;
   background-color: $third;
 
-  animation: backgroundMainMenu 375ms linear forwards;
+  animation: backgroundMainMenu 375ms ease-in-out forwards;
   animation-delay: 0.75s;
 
   opacity: 0;
@@ -31,7 +31,7 @@
     transition: all 250ms ease-in-out;
 
     animation: backgroundMainMenuItems 2s ease-in-out forwards;
-    animation-delay: 0.7s;
+    animation-delay: 0.5s;
 
     opacity: 0;
 
@@ -60,7 +60,7 @@
   position: absolute;
   background-color: $primary;
   width: 100%;
-  animation: backgroundMainMenuDecoration 750ms linear;
+  animation: backgroundMainMenuDecoration 750ms ease-in-out;
   // animation-delay: 1s;
 }
 
@@ -68,7 +68,7 @@
   position: absolute;
   background-color: $secondary;
   width: 100%;
-  animation: backgroundMainMenuDecoration 750ms linear;
+  animation: backgroundMainMenuDecoration 750ms ease-in-out;
   animation-delay: 0.375s;
 }
 
@@ -89,6 +89,10 @@
   0% {
     opacity: 1;
     height: 0rem;
+  }
+  99% {
+    opacity: 1;
+    height: 100%;
   }
   100% {
     opacity: 1;
